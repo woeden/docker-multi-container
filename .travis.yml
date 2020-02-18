@@ -13,7 +13,7 @@ after_success:
     - docker build -t woeden/multi-server ./server
     - docker build -t woeden/multi-worker ./worker
     # LOGIN TO DOCKER CLI
-    - docker -u login $DOCKER_USER -p $DOCKER_PWD
+    - docker login -u $DOCKER_USER -p $DOCKER_PWD
     # Push to Docker Hub
     - docker push woeden/multi-client
     - docker push woeden/multi-nginx
